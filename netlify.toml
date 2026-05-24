@@ -1,0 +1,22 @@
+[build]
+  command   = "cd client && npm install && npm run build"
+  publish   = "client/dist"
+  functions = "netlify/functions"
+
+# /api/projects/:id  →  /.netlify/functions/project?id=:id
+[[redirects]]
+  from   = "/api/projects/:id"
+  to     = "/.netlify/functions/project?id=:id"
+  status = 200
+
+# /api/portfolio  →  /.netlify/functions/portfolio
+[[redirects]]
+  from   = "/api/portfolio"
+  to     = "/.netlify/functions/portfolio"
+  status = 200
+
+# SPA fallback — all other routes render index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
