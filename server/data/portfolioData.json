@@ -1,0 +1,377 @@
+{
+  "personal": {
+    "name": "Sarthak Agrawal",
+    "title": "Software Engineer",
+    "subtitle": "Full Stack Developer · Web Dev · ML Enthusiast · Competitive Programmer",
+    "email": "agrawalsarthak0504@gmail.com",
+    "phone": "+91 9179217232",
+    "location": "Indore, Madhya Pradesh, India",
+    "bio": "I'm a final-year Computer Engineering student at SGSITS, Indore, with a deep passion for building things on the web. I've been coding since school — competitive programming got me hooked, and full-stack development kept me here. I enjoy the entire process: from sketching out an idea to shipping something real that people actually use.",
+    "social": {
+      "github": "https://github.com/",
+      "linkedin": "https://linkedin.com/in/",
+      "leetcode": "https://leetcode.com/",
+      "codechef": "https://www.codechef.com/users/"
+    }
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "Bachelor of Engineering",
+      "field": "Computer Engineering",
+      "institution": "Shri G.S. Institute of Technology and Science, Indore",
+      "university": "RGPV",
+      "year": "2022 – 2026",
+      "grade": "7.91 CGPA",
+      "icon": "🎓"
+    },
+    {
+      "id": "edu-2",
+      "degree": "12th Grade",
+      "field": "Science (PCM)",
+      "institution": "Shri Ram Centennial School, Indore",
+      "university": "CBSE",
+      "year": "2021",
+      "grade": "88.60%",
+      "icon": "📚"
+    },
+    {
+      "id": "edu-3",
+      "degree": "10th Grade",
+      "field": "General",
+      "institution": "Vedansh International School, Indore",
+      "university": "CBSE",
+      "year": "2019",
+      "grade": "86.83%",
+      "icon": "🏫"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Neural Nurture",
+      "role": "Software Engineer Intern",
+      "period": "Feb 2026 – Present",
+      "type": "Ongoing",
+      "description": "Working as a software engineer intern, overhauling frontend UI components and building automated data pipelines.",
+      "responsibilities": [
+        "Overhauled frontend UI components, enforcing validation rules and building a client-side error-handling layer that improved data integrity and reduced user-facing errors.",
+        "Automated data collection from dynamic websites using Puppeteer, replacing manual workflows and enabling scalable, repeatable data pipelines.",
+        "Analyzed large-scale web workflow datasets using Python to surface actionable insights that informed internal product decisions."
+      ],
+      "technologies": ["JavaScript", "Node.js", "Python", "HTML/CSS", "Puppeteer", "Web Automation", "Data Analysis"],
+      "color": "#6366f1"
+    },
+    {
+      "id": "exp-2",
+      "company": "GoMediafy",
+      "role": "Web Developer Intern",
+      "period": "May 2025 – June 2025",
+      "type": "Completed",
+      "description": "Developed a responsive website for GoMediafy showcasing their digital marketing services, client case studies and testimonials.",
+      "responsibilities": [
+        "Developed a responsive website for GoMediafy showcasing their digital marketing services, client case studies and testimonials.",
+        "Architected a CMS-driven back end enabling non-technical staff to add or update service pages and case studies on the fly."
+      ],
+      "technologies": ["React (Vite)", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "RESTful APIs", "Netlify"],
+      "link": "https://www.gomediafy.com",
+      "color": "#06b6d4"
+    }
+  ],
+  "clientProjects": [
+    {
+      "id": "gomediafy",
+      "title": "GoMediafy",
+      "tagline": "Digital Marketing Agency Website",
+      "description": "Developed a responsive website for GoMediafy showcasing their digital marketing services, client case studies, and testimonials. Architected a CMS-driven backend enabling non-technical staff to manage content on the fly.",
+      "url": "https://www.gomediafy.com",
+      "role": "Web Developer",
+      "technologies": ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Netlify", "Hostinger"],
+      "gradientFrom": "#061420",
+      "gradientTo": "#082030",
+      "accentColor": "#06b6d4"
+    },
+    {
+      "id": "onetrust-service",
+      "title": "OneTrust Service",
+      "tagline": "Professional Services Website",
+      "description": "Built a clean, professional website for OneTrust Service with service listings, inquiry forms, and a modern layout optimised for lead generation and trust-building.",
+      "url": "https://onetrustservice.com",
+      "role": "Web Developer",
+      "technologies": ["React", "Tailwind CSS", "Node.js", "Express.js", "Netlify", "Hostinger"],
+      "gradientFrom": "#0a1a0a",
+      "gradientTo": "#102210",
+      "accentColor": "#22c55e"
+    },
+    {
+      "id": "trustsphere-it",
+      "title": "TrustSphere IT Solutions",
+      "tagline": "IT Solutions Company Website",
+      "description": "Designed and developed a full website for TrustSphere IT Solutions showcasing their technology services, team, and portfolio — with a professional corporate aesthetic.",
+      "url": "https://trustsphereitsolutions.com",
+      "role": "Web Developer",
+      "technologies": ["React", "Tailwind CSS", "Node.js", "Express.js", "Netlify", "Hostinger"],
+      "gradientFrom": "#10081f",
+      "gradientTo": "#1a0e30",
+      "accentColor": "#8b5cf6"
+    }
+  ],
+  "projects": [
+    {
+      "id": "intrusion-detection-sdn",
+      "title": "Intrusion Detection System for SDN",
+      "shortDescription": "ML-driven Intrusion Detection System in a virtual SDN environment with real-time traffic analysis and attack classification.",
+      "status": "Ongoing",
+      "period": "2025 – Present",
+      "category": "Machine Learning / Networking",
+      "thumbnail": "🛡️",
+      "githubLink": null,
+      "liveLink": null,
+      "gradientFrom": "#0d2137",
+      "gradientTo": "#0a3d2b",
+      "accentColor": "#10b981",
+      "guide": "Dr. Urjita Thakar, CSE Department, SGSITS",
+      "fullDescription": "Currently developing a machine learning–driven Intrusion Detection System within a virtual SDN environment using Mininet and the Ryu Controller. The system integrates real-time traffic analysis and attack classification for DoS, DDoS, and Probe attacks through Scikit-learn, enhancing network visibility and automated threat detection capabilities.",
+      "keyFeatures": [
+        "Real-time network traffic monitoring using Mininet virtual environment",
+        "Attack classification for DoS, DDoS, and Probe attack types",
+        "Integration with Ryu SDN Controller via OpenFlow protocol",
+        "ML-based anomaly detection using Scikit-learn algorithms",
+        "Network traffic analysis and visualization using Wireshark"
+      ],
+      "technologies": ["Mininet", "Ryu Controller", "OpenFlow", "Wireshark", "Python", "Scikit-learn", "Ubuntu", "VirtualBox"],
+      "challenges": "Simulating realistic network traffic patterns in a virtual environment while maintaining high detection accuracy across different attack vectors.",
+      "outcome": "Enhanced network security posture with automated, real-time threat detection and classification capabilities within the SDN environment."
+    },
+    {
+      "id": "human-activity-recognition",
+      "title": "Human Activity Recognition Model",
+      "shortDescription": "Deep learning model to classify human activities from video sequences using TensorFlow/Keras and the UCF50 dataset.",
+      "status": "Completed",
+      "period": "March 2025",
+      "category": "Machine Learning / Computer Vision",
+      "thumbnail": "🤖",
+      "githubLink": null,
+      "liveLink": null,
+      "gradientFrom": "#130d2e",
+      "gradientTo": "#1e1040",
+      "accentColor": "#8b5cf6",
+      "guide": "Mrs. Himani Mishra, CSE Department, SGSITS",
+      "fullDescription": "Developed a machine learning model using TensorFlow/Keras trained on the UCF50 dataset to classify human actions from video sequences. The model identifies various activities such as walking, cycling, and playing instruments, with a strong focus on optimizing accuracy and generalization across diverse real-world scenarios.",
+      "keyFeatures": [
+        "Video sequence processing using OpenCV for efficient frame extraction",
+        "Deep learning model architecture built with TensorFlow/Keras",
+        "Trained on UCF50 benchmark dataset with 50 distinct action categories",
+        "Optimized for generalization to prevent overfitting",
+        "Automated dataset pipeline using yt-dlp for video downloads"
+      ],
+      "technologies": ["Python", "OpenCV", "TensorFlow", "Keras", "NumPy", "yt-dlp", "Scikit-learn"],
+      "challenges": "Handling large-scale video datasets efficiently while preventing overfitting on the diverse 50-class action categories from UCF50.",
+      "outcome": "Successfully built and trained a model that classifies multiple human activities with strong accuracy on the UCF50 benchmark dataset."
+    },
+    {
+      "id": "mess-management-system",
+      "title": "Mess Management System",
+      "shortDescription": "Full-stack mess management platform built with Agile/Scrum methodology featuring digital tokens, subscriptions, and multi-role support.",
+      "status": "Completed",
+      "period": "October – November 2024",
+      "category": "Full Stack Web Development",
+      "thumbnail": "🍽️",
+      "githubLink": null,
+      "liveLink": null,
+      "gradientFrom": "#1f1208",
+      "gradientTo": "#2d1a00",
+      "accentColor": "#f59e0b",
+      "fullDescription": "Collaboratively designed and developed a comprehensive mess management system using Agile/Scrum methodology. The system addresses key functionalities including menu management, digital token systems, subscription plans, feedback submission, and event planning. Supports multiple user roles including students, faculty, and mess managers with role-based access control.",
+      "keyFeatures": [
+        "Digital token system for streamlined meal management and tracking",
+        "Multi-role support: students, faculty, and mess managers with RBAC",
+        "Dynamic menu management with real-time updates",
+        "Subscription plans and billing management module",
+        "Feedback submission and event planning modules",
+        "Fully responsive design optimized for mobile and desktop"
+      ],
+      "technologies": ["React", "Tailwind CSS", "Node.js", "MongoDB", "JavaScript", "Express.js"],
+      "methodology": "Agile (Scrum)",
+      "challenges": "Coordinating multiple user roles with different permissions and workflows while maintaining a seamless, intuitive user experience across all roles.",
+      "outcome": "Delivered a scalable, full-featured mess management solution that streamlines day-to-day operations for educational institutions."
+    }
+  ],
+  "skills": {
+    "programmingLanguages": [
+      { "name": "C++" },
+      { "name": "JavaScript" },
+      { "name": "Python" },
+      { "name": "Java" }
+    ],
+    "webDevelopment": [
+      { "name": "React.js" },
+      { "name": "Node.js" },
+      { "name": "Express.js" },
+      { "name": "Tailwind CSS" },
+      { "name": "HTML / CSS" }
+    ],
+    "databases": [
+      { "name": "MongoDB" },
+      { "name": "MySQL" }
+    ],
+    "tools": [
+      { "name": "Git / GitHub" },
+      { "name": "Postman" },
+      { "name": "JIRA" },
+      { "name": "VS Code" },
+      { "name": "Netlify" },
+      { "name": "Hostinger" }
+    ],
+    "ml": [
+      { "name": "TensorFlow / Keras" },
+      { "name": "Scikit-learn" },
+      { "name": "OpenCV" }
+    ]
+  },
+  "achievements": [
+    {
+      "id": "ach-1",
+      "title": "700+ Coding Problems Solved",
+      "description": "Solved over 700 coding questions across LeetCode, CodeChef, CodeForces, and GeeksforGeeks.",
+      "year": "2024 – 25",
+      "icon": "💻",
+      "color": "#6366f1"
+    },
+    {
+      "id": "ach-2",
+      "title": "3-Star CodeChef Rating",
+      "description": "Achieved a 3-star rating on CodeChef with a maximum rating of 1622.",
+      "year": "2025",
+      "icon": "⭐",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "ach-3",
+      "title": "UCMAS Graduation",
+      "description": "Completed graduation in Abacus & Mental Arithmetic from UCMAS.",
+      "year": "2018",
+      "icon": "🧮",
+      "color": "#06b6d4"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-data-mining",
+      "title": "Data Mining",
+      "issuer": "NPTEL — IIT Kharagpur",
+      "date": "Jan–Mar 2026",
+      "description": "Elite NPTEL certification for an 8-week course on data mining techniques. Achieved a consolidated score of 90% (Top 5% — TOPPER) with a perfect online assignment score.",
+      "skills": ["Data Mining", "Machine Learning", "Pattern Recognition", "Python"],
+      "file": "/certificates/Data Mining.pdf",
+      "color": "#f59e0b",
+      "icon": "⛏️",
+      "score": "90%",
+      "topper": true
+    },
+    {
+      "id": "cert-soft-computing",
+      "title": "Introduction to Soft Computing",
+      "issuer": "NPTEL — IIT Kharagpur",
+      "date": "Jan–Mar 2026",
+      "description": "Elite NPTEL certification for an 8-week course on soft computing paradigms including neural networks, fuzzy logic, and evolutionary algorithms. Score: 85% (Top 5% — TOPPER).",
+      "skills": ["Neural Networks", "Fuzzy Logic", "Genetic Algorithms", "AI"],
+      "file": "/certificates/Introduction to soft computing.pdf",
+      "color": "#8b5cf6",
+      "icon": "🧠",
+      "score": "85%",
+      "topper": true
+    },
+    {
+      "id": "cert-software-testing",
+      "title": "Software Testing",
+      "issuer": "NPTEL — IIIT Bangalore",
+      "date": "Jul–Oct 2025",
+      "description": "Elite NPTEL certification for a 12-week course on software testing methodologies, covering test planning, unit testing, integration testing, and QA practices. Score: 71%.",
+      "skills": ["Software Testing", "QA", "Test Planning", "Unit Testing"],
+      "file": "/certificates/Software Testing.pdf",
+      "color": "#06b6d4",
+      "icon": "🧪",
+      "score": "71%",
+      "topper": false
+    },
+    {
+      "id": "cert-data-analytics",
+      "title": "Data Analytics with Python",
+      "issuer": "NPTEL — IIT Roorkee",
+      "date": "Jan–Apr 2025",
+      "description": "Elite NPTEL certification for a 12-week course on data analytics using Python. Achieved a consolidated score of 87% (Top 5% — TOPPER).",
+      "skills": ["Python", "Data Analytics", "Pandas", "Visualization"],
+      "file": "/certificates/Data Analytics with Python.pdf",
+      "color": "#6366f1",
+      "icon": "📊",
+      "score": "87%",
+      "topper": true
+    },
+    {
+      "id": "cert-ai-search",
+      "title": "AI: Search Methods for Problem Solving",
+      "issuer": "NPTEL — IIT Madras",
+      "date": "Jul–Oct 2024",
+      "description": "Elite NPTEL certification for a 12-week course on artificial intelligence and search methods for problem solving. Consolidated score of 65%.",
+      "skills": ["Artificial Intelligence", "Search Algorithms", "Problem Solving", "AI"],
+      "file": "/certificates/Method_for_searching.pdf",
+      "color": "#10b981",
+      "icon": "🤖",
+      "score": "65%",
+      "topper": false
+    },
+    {
+      "id": "cert-codequest",
+      "title": "CodeQuest — Coding Contest",
+      "issuer": "Algozenith SGSITS & Codefoster",
+      "date": "Feb 2024",
+      "description": "Certificate of participation in the CodeQuest coding contest organized by Algozenith SGSITS and Codefoster on February 17–18, 2024.",
+      "skills": ["Competitive Programming", "Problem Solving", "Algorithms"],
+      "file": "/certificates/Sarthak Agrawal.png",
+      "color": "#3b82f6",
+      "icon": "⚔️",
+      "score": null,
+      "topper": false
+    },
+    {
+      "id": "cert-git-training",
+      "title": "Git Training",
+      "issuer": "Spoken Tutorial — IIT Bombay",
+      "date": "Nov 2023",
+      "description": "Completion certificate for Git training at SGSITS Indore via the Spoken Tutorial Project, IIT Bombay. Covered version control, branching, and collaborative workflows. Score: 53.33%.",
+      "skills": ["Git", "Version Control", "GitHub", "Collaboration"],
+      "file": "/certificates/SARTHAK-AGRAWAL-Participant-Certificate-git-training.pdf",
+      "color": "#ef4444",
+      "icon": "🔧",
+      "score": "53.33%",
+      "topper": false
+    },
+    {
+      "id": "cert-latex",
+      "title": "LaTeX Training",
+      "issuer": "Spoken Tutorial — IIT Bombay",
+      "date": "Nov 2023",
+      "description": "Completion certificate for LaTeX training at SGSITS Indore via the Spoken Tutorial Project, IIT Bombay. Covered scientific writing, mathematical typesetting, and academic document formatting. Score: 73.33%.",
+      "skills": ["LaTeX", "Technical Writing", "Document Formatting"],
+      "file": "/certificates/SARTHAK-AGRAWAL-Participant-Certificate-latex.pdf",
+      "color": "#f97316",
+      "icon": "📝",
+      "score": "73.33%",
+      "topper": false
+    },
+    {
+      "id": "cert-excel",
+      "title": "Microsoft Excel (Beginners)",
+      "issuer": "Skill Tech",
+      "date": "Jan 2023",
+      "description": "Certificate of completion for Microsoft Excel (Beginners) covering spreadsheet fundamentals, formulas, data organization, and charts.",
+      "skills": ["Microsoft Excel", "Spreadsheets", "Data Management"],
+      "file": "/certificates/69590b90f3.JPG",
+      "color": "#22c55e",
+      "icon": "🗒️",
+      "score": null,
+      "topper": false
+    }
+  ]
+}
