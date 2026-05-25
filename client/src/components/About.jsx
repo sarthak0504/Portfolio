@@ -54,8 +54,16 @@ export default function About({ data }) {
               className="rounded-2xl p-8"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
             >
-              {/* Name + title */}
+              {/* Photo + Name + title */}
               <div className="mb-6 pb-6" style={{ borderBottom: '1px solid var(--border)' }}>
+                <div className="mb-4">
+                  <img
+                    src="/photo.png"
+                    alt={data?.name ?? 'Sarthak Agrawal'}
+                    className="w-24 h-24 rounded-full object-cover"
+                    style={{ border: '2px solid var(--border)', boxShadow: '0 0 0 4px rgba(99,102,241,0.15)' }}
+                  />
+                </div>
                 <h3 className="text-2xl font-bold t1 mb-1">{data?.name ?? 'Sarthak Agrawal'}</h3>
                 <p className="text-sm font-medium" style={{ color: '#6366f1', fontFamily: 'JetBrains Mono, monospace' }}>
                   {data?.subtitle}
