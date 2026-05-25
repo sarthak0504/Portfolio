@@ -277,26 +277,27 @@ export default function Certificates({ data }) {
                 onView={() => setActiveCert(cert)}
               />
             ))}
-
-            <AnimatePresence>
-              {showAll &&
-                data.slice(INITIAL_COUNT).map((cert, i) => (
-                  <motion.div
-                    key={cert.id}
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 20, scale: 0.96 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: i * 0.08,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
-                    <CertCard cert={cert} onView={() => setActiveCert(cert)} />
-                  </motion.div>
-                ))}
-            </AnimatePresence>
           </motion.div>
+
+          <AnimatePresence>
+            {showAll && (
+              <motion.div
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={stagger(0.1, 0)}
+              >
+                {data.slice(INITIAL_COUNT).map((cert) => (
+                  <CertCard
+                    key={cert.id}
+                    cert={cert}
+                    onView={() => setActiveCert(cert)}
+                  />
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {hidden > 0 && (
             <motion.div
