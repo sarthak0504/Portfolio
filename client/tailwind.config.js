@@ -11,9 +11,9 @@ export default {
         'dark':    '#050508',
         'dark-2':  '#0d0d1a',
         'dark-3':  '#111128',
-        'accent-indigo': '#6366f1',
-        'accent-violet': '#8b5cf6',
-        'accent-cyan':   '#06b6d4',
+        'accent-indigo': '#2563eb',
+        'accent-violet': '#0891b2',
+        'accent-cyan':   '#14b8a6',
       },
       fontFamily: {
         sans:    ['Plus Jakarta Sans', 'sans-serif'],
