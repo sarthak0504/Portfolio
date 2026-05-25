@@ -1,7 +1,10 @@
 const data = require('../../server/data/portfolioData.json');
 
 exports.handler = async (event) => {
-  const { id } = event.queryStringParameters || {};
+  const fromQuery = (event.queryStringParameters || {}).id;
+  const fromPath  = (event.rawUrl || event.path || '').split('/').filter(Boolean).pop();
+  const id        = fromQuery || fromPath;
+
   if (!id) return { statusCode: 400, body: JSON.stringify({ error: 'Missing id' }) };
 
   const project = data.projects.find(p => p.id === id);

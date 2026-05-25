@@ -3,10 +3,10 @@
   publish   = "client/dist"
   functions = "netlify/functions"
 
-# /api/projects/:id  →  /.netlify/functions/project?id=:splat
+# /api/projects/:id  →  /.netlify/functions/project
 [[redirects]]
   from   = "/api/projects/*"
-  to     = "/.netlify/functions/project?id=:splat"
+  to     = "/.netlify/functions/project"
   status = 200
 
 # /api/portfolio  →  /.netlify/functions/portfolio
