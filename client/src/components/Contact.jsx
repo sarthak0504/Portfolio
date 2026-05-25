@@ -81,10 +81,21 @@ export default function Contact({ data }) {
     }
 
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY);
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: fd.from_name,
+          reply_to:  fd.reply_to,
+          subject:   fd.subject,
+          message:   fd.message,
+        },
+        PUBLIC_KEY,
+      );
       setStatus('success');
       formRef.current.reset();
-    } catch {
+    } catch (err) {
+      console.error('EmailJS error:', err);
       setStatus('error');
     }
   };
