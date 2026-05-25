@@ -97,8 +97,8 @@ body {
 .glow-cyan   { box-shadow: 0 0 35px rgba(20,184,166,0.4); }
 
 /* Section padding */
-.section-padding { padding: 6rem 1rem; }
-@media (min-width: 768px) { .section-padding { padding: 8rem 1.5rem; } }
+.section-padding { padding: 4rem 1rem; }
+@media (min-width: 768px) { .section-padding { padding: 5.5rem 1.5rem; } }
 
 /* Timeline gradient spine */
 .timeline-line {
