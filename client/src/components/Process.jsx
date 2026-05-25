@@ -1,94 +1,133 @@
-﻿import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 
 const STEPS = [
   {
-    num: '01',
-    title: 'Discovery',
-    description: 'Deep-dive into your goals, audience, and requirements to align on what success looks like.',
-    color: '#2563eb',
+    num: "01",
+    title: "Discovery",
+    description:
+      "Deep-dive into your goals, audience, and requirements to align on what success looks like.",
+    color: "#2563eb",
   },
   {
-    num: '02',
-    title: 'Planning',
-    description: 'Define scope, architecture, and milestones. You get a clear roadmap before a line is written.',
-    color: '#0891b2',
+    num: "02",
+    title: "Planning",
+    description:
+      "Define scope, architecture, and milestones. You get a clear roadmap before a line is written.",
+    color: "#0891b2",
   },
   {
-    num: '03',
-    title: 'Development',
-    description: 'Clean, iterative builds with daily updates. You see progress at every stage of the process.',
-    color: '#14b8a6',
+    num: "03",
+    title: "Development",
+    description:
+      "Clean, iterative builds with daily updates. You see progress at every stage of the process.",
+    color: "#14b8a6",
   },
   {
-    num: '04',
-    title: 'Testing',
-    description: 'Cross-browser QA, performance checks, and mobile testing before anything goes live.',
-    color: '#10b981',
+    num: "04",
+    title: "Testing",
+    description:
+      "Cross-browser QA, performance checks, and mobile testing before anything goes live.",
+    color: "#10b981",
   },
   {
-    num: '05',
-    title: 'Deployment',
-    description: 'Smooth launch, documentation handoff, and post-deployment support to make sure it sticks.',
-    color: '#f59e0b',
+    num: "05",
+    title: "Deployment",
+    description:
+      "Smooth launch, documentation handoff, and post-deployment support to make sure it sticks.",
+    color: "#f59e0b",
   },
 ];
 
-const ease = [0.22, 1, 0.36, 1];
-
 export default function Process() {
-  const ref    = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-60px' });
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
+  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
+  const trackY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
 
   return (
-    <section id="process" ref={ref} className="section-padding bg-alt">
-      <div className="max-w-6xl mx-auto px-4">
+    <section
+      id="process"
+      ref={ref}
+      className="section-padding bg-alt relative overflow-hidden"
+    >
+      <motion.div
+        style={{ y: blobY }}
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden
+      >
+        <div
+          className="absolute top-[-5%] right-[10%] w-96 h-96 rounded-full blur-[130px]"
+          style={{ background: "rgba(37,99,235,0.05)" }}
+        />
+        <div
+          className="absolute bottom-[-5%] left-[8%] w-80 h-80 rounded-full blur-[120px]"
+          style={{ background: "rgba(20,184,166,0.05)" }}
+        />
+      </motion.div>
 
-        {/* Header */}
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           className="mb-16 text-center"
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, ease }}
+          style={{ y: headerY }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VP}
         >
-          <p className="text-xs font-semibold tracking-[0.2em] t3 mb-3 uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+          <p
+            className="text-xs font-semibold tracking-[0.2em] t3 mb-3 uppercase"
+            style={{ fontFamily: "JetBrains Mono, monospace" }}
+          >
             How I Work
           </p>
           <h2 className="text-4xl md:text-5xl font-bold t1 leading-tight">
             My <span className="gradient-text">Process</span>
           </h2>
           <p className="t2 mt-4 max-w-xl mx-auto text-base leading-relaxed">
-            A structured approach that keeps you informed and confident at every step.
+            A structured approach that keeps you informed and confident at every
+            step.
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="process-track">
-          {STEPS.map((step, i) => (
+        <motion.div
+          className="process-track"
+          style={{ y: trackY }}
+          variants={stagger(0.12, 0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VP}
+        >
+          {STEPS.map((step) => (
             <motion.div
               key={step.num}
               className="process-step"
-              initial={{ opacity: 0, y: 28 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1, ease }}
+              variants={cardReveal}
             >
-              {/* Number circle */}
               <div
                 className="process-num"
-                style={inView ? { borderColor: step.color, color: step.color, background: `${step.color}12` } : {}}
+                style={{
+                  borderColor: step.color,
+                  color: step.color,
+                  background: `${step.color}12`,
+                }}
               >
                 {step.num}
               </div>
-
-              {/* Content */}
               <div>
-                <h3 className="text-base font-semibold t1 mb-1.5">{step.title}</h3>
+                <h3 className="text-base font-semibold t1 mb-1.5">
+                  {step.title}
+                </h3>
                 <p className="text-sm t3 leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
