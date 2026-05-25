@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -46,7 +46,7 @@ export default function Hero({ data }) {
           fontWeight: 900,
           lineHeight: 1,
           color: 'transparent',
-          WebkitTextStroke: '1.5px rgba(99,102,241,0.055)',
+          WebkitTextStroke: '1.5px rgba(37,99,235,0.055)',
           fontFamily: "'JetBrains Mono', monospace",
           letterSpacing: '-0.06em',
           userSelect: 'none',
@@ -106,8 +106,8 @@ export default function Hero({ data }) {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm"
                 style={{
-                  background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                  boxShadow: '0 0 28px rgba(99,102,241,0.35)',
+                  background: 'linear-gradient(135deg, #2563eb, #0891b2)',
+                  boxShadow: '0 0 28px rgba(37,99,235,0.35)',
                 }}
               >
                 View My Work

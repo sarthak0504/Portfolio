@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+﻿import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -162,7 +162,7 @@ export default function Contact({ data }) {
               >
                 <div
                   className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(99,102,241,0.12)', color: '#6366f1' }}
+                  style={{ background: 'rgba(37,99,235,0.12)', color: '#2563eb' }}
                 >
                   {icon}
                 </div>
@@ -306,8 +306,8 @@ export default function Contact({ data }) {
                     whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
                     className="w-full py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 transition-opacity"
                     style={{
-                      background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                      boxShadow: '0 0 24px rgba(99,102,241,0.3)',
+                      background: 'linear-gradient(135deg, #2563eb, #0891b2)',
+                      boxShadow: '0 0 24px rgba(37,99,235,0.3)',
                       opacity: status === 'sending' ? 0.7 : 1,
                       cursor: status === 'sending' ? 'not-allowed' : 'pointer',
                     }}

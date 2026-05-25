@@ -1,12 +1,12 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const CATEGORIES = [
   { key: 'programmingLanguages', label: 'Programming Languages', num: '01', accent: '#f59e0b' },
-  { key: 'webDevelopment',       label: 'Web Development',       num: '02', accent: '#6366f1' },
-  { key: 'databases',            label: 'Databases',             num: '03', accent: '#06b6d4' },
+  { key: 'webDevelopment',       label: 'Web Development',       num: '02', accent: '#2563eb' },
+  { key: 'databases',            label: 'Databases',             num: '03', accent: '#14b8a6' },
   { key: 'tools',                label: 'Tools & Platforms',     num: '04', accent: '#10b981' },
-  { key: 'ml',                   label: 'ML & Data Science',     num: '05', accent: '#8b5cf6' },
+  { key: 'ml',                   label: 'ML & Data Science',     num: '05', accent: '#0891b2' },
 ];
 
 export default function Skills({ data }) {

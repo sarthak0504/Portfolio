@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+﻿import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext.jsx';
@@ -19,7 +19,7 @@ function CursorGlow() {
       style={{
         left: pos.x - 14, top: pos.y - 14,
         width: 28, height: 28,
-        border: '1.5px solid rgba(99,102,241,0.55)',
+        border: '1.5px solid rgba(37,99,235,0.55)',
         transition: 'left 0.07s linear, top 0.07s linear',
       }}
     />
@@ -29,9 +29,9 @@ function CursorGlow() {
 function BackgroundOrbs() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden>
-      <div className="absolute top-[-8%]  left-[8%]  w-[520px] h-[520px] bg-[#6366f1]/[0.045] rounded-full blur-[130px] transition-opacity duration-500" />
-      <div className="absolute top-[38%] right-[4%] w-[420px] h-[420px] bg-[#8b5cf6]/[0.04]  rounded-full blur-[110px] transition-opacity duration-500" />
-      <div className="absolute bottom-[8%] left-[28%] w-[370px] h-[370px] bg-[#06b6d4]/[0.035] rounded-full blur-[110px] transition-opacity duration-500" />
+      <div className="absolute top-[-8%]  left-[8%]  w-[520px] h-[520px] bg-[#2563eb]/[0.045] rounded-full blur-[130px] transition-opacity duration-500" />
+      <div className="absolute top-[38%] right-[4%] w-[420px] h-[420px] bg-[#0891b2]/[0.04]  rounded-full blur-[110px] transition-opacity duration-500" />
+      <div className="absolute bottom-[8%] left-[28%] w-[370px] h-[370px] bg-[#14b8a6]/[0.035] rounded-full blur-[110px] transition-opacity duration-500" />
     </div>
   );
 }

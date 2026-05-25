@@ -1,11 +1,11 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const SERVICES = [
   {
     title: 'Frontend Development',
     description: 'Pixel-perfect React UIs with smooth animations, responsive layouts, and fast load times.',
-    color: '#6366f1',
+    color: '#2563eb',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/>
@@ -16,7 +16,7 @@ const SERVICES = [
   {
     title: 'Full Stack Web Apps',
     description: 'End-to-end web applications with React frontends, Node.js backends, and MongoDB databases.',
-    color: '#8b5cf6',
+    color: '#0891b2',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -27,7 +27,7 @@ const SERVICES = [
   {
     title: 'Landing Pages',
     description: 'High-converting, visually polished landing pages that tell your story and drive action.',
-    color: '#06b6d4',
+    color: '#14b8a6',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z"/>

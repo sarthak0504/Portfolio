@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext.jsx';
 
@@ -84,7 +84,7 @@ export default function Header({ data }) {
               src="/photo.png"
               alt={data?.name ?? 'Sarthak Agrawal'}
               className="w-8 h-8 rounded-full object-cover flex-shrink-0"
-              style={{ border: '1.5px solid rgba(99,102,241,0.5)' }}
+              style={{ border: '1.5px solid rgba(37,99,235,0.5)' }}
             />
             <span className="text-sm font-bold t1 hidden md:block">{data?.name ?? 'Sarthak Agrawal'}</span>
           </motion.button>
@@ -116,11 +116,11 @@ export default function Header({ data }) {
                     src="/photo.png"
                     alt={data?.name ?? 'Sarthak Agrawal'}
                     className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-                    style={{ border: '2px solid rgba(99,102,241,0.4)', boxShadow: '0 0 0 4px rgba(99,102,241,0.1)' }}
+                    style={{ border: '2px solid rgba(37,99,235,0.4)', boxShadow: '0 0 0 4px rgba(37,99,235,0.1)' }}
                   />
                   <div>
                     <p className="font-bold t1 text-sm leading-tight">{data?.name ?? 'Sarthak Agrawal'}</p>
-                    <p className="text-xs mt-0.5" style={{ color: '#6366f1', fontFamily: 'JetBrains Mono, monospace' }}>
+                    <p className="text-xs mt-0.5" style={{ color: '#2563eb', fontFamily: 'JetBrains Mono, monospace' }}>
                       {data?.title ?? 'Software Engineer'}
                     </p>
                   </div>
@@ -151,7 +151,7 @@ export default function Header({ data }) {
                     },
                   ].map(({ icon, label, href }) => label && (
                     <div key={label} className="flex items-center gap-2.5">
-                      <span className="flex-shrink-0" style={{ color: '#6366f1' }}>{icon}</span>
+                      <span className="flex-shrink-0" style={{ color: '#2563eb' }}>{icon}</span>
                       {href
                         ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="text-xs t2 hover:text-accent-indigo transition-colors truncate">{label}</a>
                         : <span className="text-xs t2 truncate">{label}</span>
@@ -175,7 +175,7 @@ export default function Header({ data }) {
                 className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                   isActive
                     ? 'bg-accent-indigo text-white shadow-md shadow-indigo-500/30'
-                    : 't3 hover:t1 hover:bg-[rgba(99,102,241,0.08)]'
+                    : 't3 hover:t1 hover:bg-[rgba(37,99,235,0.08)]'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
@@ -229,13 +229,13 @@ export default function Header({ data }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{    opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden glass border-t border-[rgba(99,102,241,0.1)] overflow-hidden"
+            className="lg:hidden glass border-t border-[rgba(37,99,235,0.1)] overflow-hidden"
           >
             {NAV.map(({ label, id, path }) => (
               <button
                 key={id}
                 onClick={() => { pushPath(path); setMenuOpen(false); setTimeout(() => scrollTo(id), 300); }}
-                className={`w-full text-left px-6 py-3 text-sm transition-colors hover:bg-[rgba(99,102,241,0.06)] ${
+                className={`w-full text-left px-6 py-3 text-sm transition-colors hover:bg-[rgba(37,99,235,0.06)] ${
                   active === id ? 'text-accent-indigo font-semibold' : 't2'
                 }`}
               >

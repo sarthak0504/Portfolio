@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const STEPS = [
@@ -6,19 +6,19 @@ const STEPS = [
     num: '01',
     title: 'Discovery',
     description: 'Deep-dive into your goals, audience, and requirements to align on what success looks like.',
-    color: '#6366f1',
+    color: '#2563eb',
   },
   {
     num: '02',
     title: 'Planning',
     description: 'Define scope, architecture, and milestones. You get a clear roadmap before a line is written.',
-    color: '#8b5cf6',
+    color: '#0891b2',
   },
   {
     num: '03',
     title: 'Development',
     description: 'Clean, iterative builds with daily updates. You see progress at every stage of the process.',
-    color: '#06b6d4',
+    color: '#14b8a6',
   },
   {
     num: '04',

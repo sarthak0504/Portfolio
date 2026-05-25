@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ function ThumbIcon({ accentColor }) {
 function ProjectCard({ project, delay, inView }) {
   const from    = project.gradientFrom  ?? '#0d0d1a';
   const to      = project.gradientTo    ?? '#111128';
-  const accent  = project.accentColor   ?? '#6366f1';
+  const accent  = project.accentColor   ?? '#2563eb';
 
   return (
     <motion.div

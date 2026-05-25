@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import TiltCard from './TiltCard.jsx';
 import AnimatedCounter from './AnimatedCounter.jsx';
@@ -12,9 +12,9 @@ const STATS = [
 
 const STATUS = [
   { dot: '#22c55e',  text: 'Open to freelance projects' },
-  { dot: '#06b6d4',  text: 'SWE Intern @ Neural Nurture' },
-  { dot: '#8b5cf6',  text: 'CS Final Year · SGSITS Indore' },
-  { dot: '#6366f1',  text: 'Building full-stack & ML products' },
+  { dot: '#14b8a6',  text: 'SWE Intern @ Neural Nurture' },
+  { dot: '#0891b2',  text: 'CS Final Year · SGSITS Indore' },
+  { dot: '#2563eb',  text: 'Building full-stack & ML products' },
 ];
 
 const ease = [0.22, 1, 0.36, 1];
@@ -61,11 +61,11 @@ export default function About({ data }) {
                     src="/photo.png"
                     alt={data?.name ?? 'Sarthak Agrawal'}
                     className="w-24 h-24 rounded-full object-cover"
-                    style={{ border: '2px solid var(--border)', boxShadow: '0 0 0 4px rgba(99,102,241,0.15)' }}
+                    style={{ border: '2px solid var(--border)', boxShadow: '0 0 0 4px rgba(37,99,235,0.15)' }}
                   />
                 </div>
                 <h3 className="text-2xl font-bold t1 mb-1">{data?.name ?? 'Sarthak Agrawal'}</h3>
-                <p className="text-sm font-medium" style={{ color: '#6366f1', fontFamily: 'JetBrains Mono, monospace' }}>
+                <p className="text-sm font-medium" style={{ color: '#2563eb', fontFamily: 'JetBrains Mono, monospace' }}>
                   {data?.subtitle}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function About({ data }) {
                   },
                 ].map(({ icon, value, href }) => (
                   <div key={value} className="flex items-center gap-2.5 text-sm t3">
-                    <span className="flex-shrink-0" style={{ color: '#6366f1' }}>{icon}</span>
+                    <span className="flex-shrink-0" style={{ color: '#2563eb' }}>{icon}</span>
                     {href
                       ? <a href={href} className="hover:text-accent-indigo transition-colors">{value}</a>
                       : <span>{value}</span>}
@@ -159,7 +159,7 @@ export default function About({ data }) {
             >
               <p
                 className="text-xs font-semibold tracking-widest mb-4 uppercase"
-                style={{ color: '#06b6d4', fontFamily: 'JetBrains Mono, monospace' }}
+                style={{ color: '#14b8a6', fontFamily: 'JetBrains Mono, monospace' }}
               >
                 Current Status
               </p>
