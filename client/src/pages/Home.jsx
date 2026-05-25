@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Header data={data?.personal} />
       <main>
         <Hero            data={data?.personal}       />
 
