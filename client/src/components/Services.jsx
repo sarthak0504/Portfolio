@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, scaleUp, stagger, VP } from "../utils/motion.js";
 
@@ -139,8 +139,6 @@ export default function Services() {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-9%"]);
-  const gridY = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
     <section
@@ -166,7 +164,6 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           className="mb-14"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -189,7 +186,6 @@ export default function Services() {
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          style={{ y: gridY }}
           variants={stagger(0.08, 0.05)}
           initial="hidden"
           whileInView="visible"

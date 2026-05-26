@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, scaleUp, stagger, VP } from "../utils/motion.js";
 import TiltCard from "./TiltCard.jsx";
@@ -10,8 +10,6 @@ export default function Achievements({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
-  const gridY = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
     <section
@@ -37,7 +35,6 @@ export default function Achievements({ data }) {
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -51,7 +48,6 @@ export default function Achievements({ data }) {
 
         <motion.div
           className="grid md:grid-cols-3 gap-6"
-          style={{ y: gridY }}
           variants={stagger(0.15, 0.1)}
           initial="hidden"
           whileInView="visible"

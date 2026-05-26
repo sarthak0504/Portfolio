@@ -118,9 +118,9 @@ export default function Hero({ data }) {
 
           {/* Sub-headline + CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.65, delay: 0.58, ease: EASE_EXPO }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.5, ease: EASE_EXPO }}
             className="flex flex-col lg:flex-row lg:items-end gap-8 mb-14"
           >
             <p className="text-lg t2 leading-relaxed max-w-[440px]">

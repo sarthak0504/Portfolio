@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+﻿import { useRef, useState, useEffect, useCallback } from "react";
 import {
   motion,
   useScroll,
@@ -210,8 +210,6 @@ export default function Certificates({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
-  const gridY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
 
   const [activeCert, setActiveCert] = useState(null);
   const [showAll, setShowAll] = useState(false);
@@ -246,7 +244,6 @@ export default function Certificates({ data }) {
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-16"
-            style={{ y: headerY }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -264,7 +261,6 @@ export default function Certificates({ data }) {
 
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-            style={{ y: gridY }}
             variants={stagger(0.12, 0.1)}
             initial="hidden"
             whileInView="visible"
