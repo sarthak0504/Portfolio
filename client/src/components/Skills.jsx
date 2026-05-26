@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, stagger, VP } from "../utils/motion.js";
 
@@ -47,8 +47,6 @@ export default function Skills({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-24%", "24%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["5%", "-10%"]);
-  const runwayY = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
     <section
@@ -74,7 +72,6 @@ export default function Skills({ data }) {
       <div className="sk-wrap relative z-10">
         <motion.div
           className="sk-section-head"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -88,7 +85,6 @@ export default function Skills({ data }) {
 
         <motion.div
           className="sk-runway"
-          style={{ y: runwayY }}
           variants={stagger(0.12, 0.1)}
           initial="hidden"
           whileInView="visible"

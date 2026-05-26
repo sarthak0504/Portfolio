@@ -53,9 +53,6 @@ export default function Contact({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["5%", "-9%"]);
-  const leftY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
-  const rightY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
   const formRef = useRef(null);
 
@@ -136,7 +133,6 @@ export default function Contact({ data }) {
         {/* Header */}
         <motion.div
           className="mb-14"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -161,7 +157,6 @@ export default function Contact({ data }) {
         <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
           {/* Left: Info + socials */}
           <motion.div
-            style={{ y: leftY }}
             variants={slideLeft}
             initial="hidden"
             whileInView="visible"
@@ -276,7 +271,6 @@ export default function Contact({ data }) {
 
           {/* Right: Contact form */}
           <motion.div
-            style={{ y: rightY }}
             variants={slideRight}
             initial="hidden"
             whileInView="visible"

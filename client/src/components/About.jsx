@@ -32,9 +32,6 @@ export default function About({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
-  const leftY = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
-  const rightY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
   return (
     <section
@@ -62,7 +59,6 @@ export default function About({ data }) {
         {/* Header */}
         <motion.div
           className="mb-14"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -82,7 +78,6 @@ export default function About({ data }) {
         <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Left: Bio card */}
           <motion.div
-            style={{ y: leftY }}
             variants={slideLeft}
             initial="hidden"
             whileInView="visible"
@@ -224,7 +219,6 @@ export default function About({ data }) {
 
           {/* Right: Stats + status */}
           <motion.div
-            style={{ y: rightY }}
             variants={stagger(0.1, 0.15)}
             initial="hidden"
             whileInView="visible"

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 
@@ -173,8 +173,6 @@ export default function ClientProjects({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-9%"]);
-  const gridY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
 
   if (!data?.length) return null;
 
@@ -202,7 +200,6 @@ export default function ClientProjects({ data }) {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           className="mb-14"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -224,7 +221,6 @@ export default function ClientProjects({ data }) {
 
         <motion.div
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          style={{ y: gridY }}
           variants={stagger(0.13, 0.1)}
           initial="hidden"
           whileInView="visible"

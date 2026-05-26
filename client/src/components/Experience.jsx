@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 import TiltCard from "./TiltCard.jsx";
@@ -10,8 +10,6 @@ export default function Experience({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["5%", "-10%"]);
-  const cardsY = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
     <section
@@ -38,7 +36,6 @@ export default function Experience({ data }) {
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -52,7 +49,6 @@ export default function Experience({ data }) {
 
         <motion.div
           className="space-y-8"
-          style={{ y: cardsY }}
           variants={stagger(0.18, 0.1)}
           initial="hidden"
           whileInView="visible"

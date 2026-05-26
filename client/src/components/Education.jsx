@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, slideLeft, slideRight, VP } from "../utils/motion.js";
 import TiltCard from "./TiltCard.jsx";
@@ -10,8 +10,6 @@ export default function Education({ data }) {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
 
   return (
     <section
@@ -37,7 +35,6 @@ export default function Education({ data }) {
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -49,7 +46,7 @@ export default function Education({ data }) {
           <div className="w-20 h-1 bg-gradient-to-r from-accent-indigo to-accent-cyan mx-auto rounded-full" />
         </motion.div>
 
-        <motion.div className="relative" style={{ y: contentY }}>
+        <motion.div className="relative">
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px timeline-line md:-translate-x-px" />
 
           {data?.map((edu, i) => {

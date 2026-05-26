@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 
@@ -47,8 +47,6 @@ export default function Process() {
     offset: ["start end", "end start"],
   });
   const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-  const headerY = useTransform(scrollYProgress, [0, 1], ["4%", "-8%"]);
-  const trackY = useTransform(scrollYProgress, [0, 1], ["7%", "-7%"]);
 
   return (
     <section
@@ -74,7 +72,6 @@ export default function Process() {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
           className="mb-16 text-center"
-          style={{ y: headerY }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -97,7 +94,6 @@ export default function Process() {
 
         <motion.div
           className="process-track"
-          style={{ y: trackY }}
           variants={stagger(0.12, 0.1)}
           initial="hidden"
           whileInView="visible"
