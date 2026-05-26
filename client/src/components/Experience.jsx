@@ -1,28 +1,14 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 import TiltCard from "./TiltCard.jsx";
 
 export default function Experience({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
-
   return (
     <section
       id="experience"
-      ref={ref}
       className="section-padding relative overflow-hidden"
     >
-      {/* Parallax background blobs */}
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/3 right-[-8%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(8,145,178,0.06)" }}
@@ -31,7 +17,7 @@ export default function Experience({ data }) {
           className="absolute bottom-1/4 left-[-5%] w-72 h-72 rounded-full blur-[110px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div

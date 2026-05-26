@@ -1,5 +1,4 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 import { Link } from "react-router-dom";
 
@@ -194,24 +193,12 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-
   return (
     <section
       id="academic-projects"
-      ref={ref}
       className="section-padding relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-5%] right-[10%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(20,184,166,0.06)" }}
@@ -220,7 +207,7 @@ export default function Projects({ data }) {
           className="absolute bottom-[-5%] left-[5%] w-72 h-72 rounded-full blur-[110px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div

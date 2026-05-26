@@ -1,5 +1,4 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeUp, stagger, VP } from "../utils/motion.js";
 
 const CATEGORIES = [
@@ -20,45 +19,27 @@ const CATEGORIES = [
   { key: "ml", label: "ML & Data Science", num: "05", accent: "#0891b2" },
 ];
 
+// GPU-safe: opacity + y only. No filter:blur (forces per-frame layer promotion).
 const rowVariant = {
-  hidden: { opacity: 0, y: 22, filter: "blur(4px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
-  },
+  hidden:  { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0,
+    transition: { duration: 0.48, ease: [0.16, 1, 0.3, 1] } },
 };
 
+// No scale — avoids compositor churn across many pill elements simultaneously
 const pillVariant = {
-  hidden: { opacity: 0, y: 10, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.3, ease: [0.34, 1.4, 0.64, 1] },
-  },
+  hidden:  { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0,
+    transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function Skills({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-24%", "24%"]);
-
   return (
     <section
       id="skills"
-      ref={ref}
       className="section-padding relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-8%] left-[15%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
@@ -67,7 +48,7 @@ export default function Skills({ data }) {
           className="absolute bottom-[-5%] right-[10%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(20,184,166,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="sk-wrap relative z-10">
         <motion.div
@@ -85,7 +66,7 @@ export default function Skills({ data }) {
 
         <motion.div
           className="sk-runway"
-          variants={stagger(0.12, 0.1)}
+          variants={stagger(0.1, 0.08)}
           initial="hidden"
           whileInView="visible"
           viewport={VP}
@@ -109,7 +90,7 @@ export default function Skills({ data }) {
 
                 <span className="sk-vline" />
 
-                <motion.div className="sk-pills" variants={stagger(0.07, 0.05)}>
+                <motion.div className="sk-pills" variants={stagger(0.05, 0.02)}>
                   {data[cat.key].map((skill) => (
                     <motion.span
                       key={skill.name}

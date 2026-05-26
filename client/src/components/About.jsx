@@ -1,5 +1,4 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import TiltCard from "./TiltCard.jsx";
 import AnimatedCounter from "./AnimatedCounter.jsx";
 import {
@@ -26,25 +25,12 @@ const STATUS = [
 ];
 
 export default function About({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-
   return (
     <section
       id="about"
-      ref={ref}
       className="section-padding bg-alt relative overflow-hidden"
     >
-      {/* Parallax background blobs */}
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-1/4 left-[-5%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(37,99,235,0.06)" }}
@@ -53,7 +39,7 @@ export default function About({ data }) {
           className="absolute bottom-1/4 right-[-5%] w-64 h-64 rounded-full blur-[100px]"
           style={{ background: "rgba(20,184,166,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         {/* Header */}

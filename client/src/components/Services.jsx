@@ -1,5 +1,4 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { fadeUp, scaleUp, stagger, VP } from "../utils/motion.js";
 
 const SERVICES = [
@@ -133,24 +132,12 @@ const SERVICES = [
 ];
 
 export default function Services() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-
   return (
     <section
       id="services"
-      ref={ref}
       className="section-padding relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-5%] left-[10%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
@@ -159,7 +146,7 @@ export default function Services() {
           className="absolute bottom-[-5%] right-[8%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(8,145,178,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div

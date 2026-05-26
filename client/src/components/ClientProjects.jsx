@@ -1,5 +1,4 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeUp, cardReveal, stagger, VP } from "../utils/motion.js";
 
 function ExternalIcon() {
@@ -29,10 +28,9 @@ function ClientCard({ project }) {
       variants={cardReveal}
       whileHover={{
         y: -4,
-        transition: { type: "spring", stiffness: 300, damping: 20 },
+        transition: { type: "spring", stiffness: 300, damping: 22 },
       }}
     >
-      {/* Gradient thumbnail */}
       <div
         className="proj-thumb relative"
         style={{
@@ -49,13 +47,12 @@ function ClientCard({ project }) {
           }}
         />
 
-        {/* Browser chrome mockup */}
+        {/* Browser chrome — solid bg, no backdropFilter to avoid compositor cost */}
         <div
           className="absolute inset-4 rounded-xl overflow-hidden"
           style={{
-            background: "rgba(0,0,0,0.45)",
+            background: "rgba(0,0,0,0.55)",
             border: `1px solid ${accentColor}30`,
-            backdropFilter: "blur(4px)",
           }}
         >
           <div
@@ -89,7 +86,6 @@ function ClientCard({ project }) {
         </div>
       </div>
 
-      {/* Card body */}
       <div className="p-6 flex flex-col gap-3 flex-1">
         <div className="flex items-center justify-between">
           <span
@@ -167,26 +163,14 @@ function ClientCard({ project }) {
 }
 
 export default function ClientProjects({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-
   if (!data?.length) return null;
 
   return (
     <section
       id="client-work"
-      ref={ref}
       className="section-padding bg-alt relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-5%] right-[8%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
@@ -195,7 +179,7 @@ export default function ClientProjects({ data }) {
           className="absolute bottom-[-5%] left-[5%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(20,184,166,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div
@@ -221,7 +205,7 @@ export default function ClientProjects({ data }) {
 
         <motion.div
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={stagger(0.13, 0.1)}
+          variants={stagger(0.1, 0.08)}
           initial="hidden"
           whileInView="visible"
           viewport={VP}
