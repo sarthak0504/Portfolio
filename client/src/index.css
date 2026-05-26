@@ -111,9 +111,14 @@ body {
 ══════════════════════════════════════════════════════════ */
 .tilt-card {
   transform-style: preserve-3d;
-  will-change: transform;
+  /* will-change applied on hover only — permanent will-change creates GPU layers
+     for ALL cards even when idle, multiplying VRAM usage needlessly */
   transition: transform 0.35s cubic-bezier(0.03, 0.98, 0.52, 0.99),
               box-shadow 0.35s ease;
+}
+
+.tilt-card:hover {
+  will-change: transform;
 }
 .tilt-card:hover {
   box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 0 40px rgba(37,99,235,0.12);
@@ -656,4 +661,25 @@ body {
 .contact-input:focus {
   border-color: rgba(99, 102, 241, 0.5);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ══════════════════════════════════════════════════════════
+   ACCESSIBILITY — Reduced Motion
+   Cuts all animation for users who opt out. CSS covers
+   keyframe animations; Framer Motion's useReducedMotion()
+   handles JS-driven motion (see ScrollReveal.jsx).
+══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Marquee stops completely — infinite animation is especially disorienting */
+  .hero-marquee-inner { animation: none; }
+
+  /* Status dots stop pulsing */
+  .badge-dot { animation: none; }
 }

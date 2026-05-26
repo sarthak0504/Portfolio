@@ -1,27 +1,14 @@
-﻿import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { fadeUp, scaleUp, stagger, VP } from "../utils/motion.js";
 import TiltCard from "./TiltCard.jsx";
 
 export default function Achievements({ data }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-
   return (
     <section
       id="achievements"
-      ref={ref}
       className="section-padding bg-alt relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-5%] left-[15%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
@@ -30,7 +17,7 @@ export default function Achievements({ data }) {
           className="absolute bottom-[-5%] right-[10%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(20,184,166,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div

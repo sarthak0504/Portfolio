@@ -1,11 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
 import Header from "./components/Header.jsx";
@@ -13,68 +8,61 @@ import Home from "./pages/Home.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 import usePortfolioData from "./hooks/usePortfolioData.js";
 
+// Ref-based cursor — no React re-render on mousemove, pure DOM transform.
+// transform: translate() stays on the compositor layer (GPU-composited, zero layout).
 function CursorGlow() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const dotRef = useRef(null);
   useEffect(() => {
-    const move = (e) => setPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", move);
+    const move = (e) => {
+      if (!dotRef.current) return;
+      dotRef.current.style.transform = `translate(${e.clientX - 14}px, ${e.clientY - 14}px)`;
+    };
+    window.addEventListener("mousemove", move, { passive: true });
     return () => window.removeEventListener("mousemove", move);
   }, []);
   return (
     <div
+      ref={dotRef}
       className="fixed pointer-events-none z-50 rounded-full hidden md:block"
       style={{
-        left: pos.x - 14,
-        top: pos.y - 14,
+        top: 0,
+        left: 0,
         width: 28,
         height: 28,
         border: "1.5px solid rgba(37,99,235,0.55)",
-        transition: "left 0.07s linear, top 0.07s linear",
+        willChange: "transform",
+        transition: "transform 0.08s linear",
       }}
     />
   );
 }
 
+// Static ambient glow — no scroll tracking, no JS animation.
+// Large blurs on fixed elements + scroll-transform = constant GPU repaint. Removed.
 function BackgroundOrbs() {
-  const { scrollY } = useScroll();
-  const orb1Y = useTransform(scrollY, [0, 2000], [0, -180]);
-  const orb2Y = useTransform(scrollY, [0, 2000], [0, 120]);
-  const orb3Y = useTransform(scrollY, [0, 2000], [0, -90]);
-
   return (
     <div
       className="fixed inset-0 overflow-hidden pointer-events-none z-0"
       aria-hidden
     >
-      <motion.div
-        style={{ y: orb1Y }}
-        className="absolute top-[-8%] left-[8%] w-[520px] h-[520px] bg-[#2563eb]/[0.045] rounded-full blur-[130px]"
-      />
-      <motion.div
-        style={{ y: orb2Y }}
-        className="absolute top-[38%] right-[4%] w-[420px] h-[420px] bg-[#0891b2]/[0.04] rounded-full blur-[110px]"
-      />
-      <motion.div
-        style={{ y: orb3Y }}
-        className="absolute bottom-[8%] left-[28%] w-[370px] h-[370px] bg-[#14b8a6]/[0.035] rounded-full blur-[110px]"
-      />
+      <div className="absolute top-[-8%] left-[8%] w-[520px] h-[520px] bg-[#2563eb]/[0.045] rounded-full blur-[130px]" />
+      <div className="absolute top-[38%] right-[4%] w-[420px] h-[420px] bg-[#0891b2]/[0.04] rounded-full blur-[110px]" />
+      <div className="absolute bottom-[8%] left-[28%] w-[370px] h-[370px] bg-[#14b8a6]/[0.035] rounded-full blur-[110px]" />
     </div>
   );
 }
 
 const pageVariants = {
-  initial: { opacity: 0, y: 20, scale: 0.99 },
+  initial: { opacity: 0, y: 16 },
   enter: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
   },
   exit: {
     opacity: 0,
-    y: -12,
-    scale: 1.01,
-    transition: { duration: 0.28, ease: [0.4, 0, 1, 1] },
+    y: -10,
+    transition: { duration: 0.25, ease: [0.4, 0, 1, 1] },
   },
 };
 
@@ -87,8 +75,6 @@ function AppShell() {
       <ScrollProgress />
       <CursorGlow />
       <BackgroundOrbs />
-      {/* Header lives outside AnimatePresence so CSS filter on the page
-          transition wrapper never traps it as a fixed-positioning containing block */}
       <Header data={data?.personal} />
       <AnimatePresence mode="wait">
         <motion.div

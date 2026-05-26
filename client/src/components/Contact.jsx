@@ -1,5 +1,5 @@
 ﻿import { useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeUp, slideLeft, slideRight, VP } from "../utils/motion.js";
 import emailjs from "@emailjs/browser";
 
@@ -47,13 +47,6 @@ const SOCIALS = [
 ];
 
 export default function Contact({ data }) {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-22%", "22%"]);
-
   const formRef = useRef(null);
 
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
@@ -111,14 +104,9 @@ export default function Contact({ data }) {
   return (
     <section
       id="contact"
-      ref={sectionRef}
       className="section-padding relative overflow-hidden"
     >
-      <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute top-[-5%] left-[10%] w-96 h-96 rounded-full blur-[130px]"
           style={{ background: "rgba(37,99,235,0.05)" }}
@@ -127,7 +115,7 @@ export default function Contact({ data }) {
           className="absolute bottom-[-5%] right-[5%] w-80 h-80 rounded-full blur-[120px]"
           style={{ background: "rgba(20,184,166,0.05)" }}
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         {/* Header */}
